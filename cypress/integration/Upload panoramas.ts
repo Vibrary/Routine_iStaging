@@ -14,7 +14,7 @@ it('Editor login', () => {
 
     cy.get('.btn').click();
 
-    // build a new building
+    // create a new building
     cy.get('#buildingsCreateBuildingButton')
         .click();
 
@@ -31,6 +31,7 @@ it('Editor login', () => {
     cy.get('.nav > :nth-child(2) > .nav-link').click();
 
 
+    // upload panoramas
     for( var i = 0; i < 3; i++ ) {
 
         cy.get('.add-panoramas > :nth-child(1)').click();
@@ -56,6 +57,7 @@ it('Editor login', () => {
         // wait for uploading finished
         cy.wait(20000);
 
+        // check if uploading successfully finished
         cy.get('.footer > p')
             .should('contain', '上傳結束')
 
