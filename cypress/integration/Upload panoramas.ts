@@ -63,8 +63,8 @@ it('Upload panoramas', () => {
         cy.wait(20000);
 
         // check if uploading successfully finished
-        cy.get('.footer > p')
-            .should('contain', '上傳結束')
+        cy.get('.footer > p', {timeout : ( 10000 * i )})
+            .should('contain', '上傳結束');
 
         cy.get('.header > button')
             .click();
@@ -78,4 +78,17 @@ it('Upload panoramas', () => {
             .should('contain', 'test ('+ (11 - p) +')');
 
     }
+
+    // check upload limit and hint UI
+    cy.get('.add-panoramas > :nth-child(1)').click();
+
+    cy.get('[style="background-color: transparent; position: fixed;"] > .i-modal-inner > .modal-content > .modal-content-title')
+        .should('contain', '全景圖數量已達上限');
+
+    cy.get('[style="background-color: transparent; position: fixed;"] > .i-modal-inner > .modal-content > .modal-content-text')
+        .should('contain', '全景圖數量已滿');
+
+    cy.get('[style="background-color: transparent; position: fixed;"] > .i-modal-inner > .modal-content > .modal-content-buttons > .btn')
+        .click();
+    
 })
