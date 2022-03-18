@@ -19,7 +19,7 @@ it('Editor login', () => {
         .click();
 
     cy.get('.i-input')
-        .type('2022-03-17');
+        .type('2022-03-18');
 
     cy.get('.i-switch-track')
         .click();
