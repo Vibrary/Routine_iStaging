@@ -4,7 +4,7 @@ Cypress.on('uncaught:exception', (err, ruunable) => {
     return false;
 })
 
-it('Editor login', () => {
+it('Upload panoramas', () => {
 
     cy.visit('https://vreditor.istaging.com/');
 
@@ -51,6 +51,11 @@ it('Editor login', () => {
         // wait for attaching finished
         cy.wait(5000);
 
+        if( i == 2 ) {
+            cy.get('#use-filename')
+                .click();
+        }
+
         cy.get('[style="background-color: rgba(0, 0, 0, 0.7); position: fixed;"] > .i-modal-inner > .i-form-2 > .flex-center > .row-mbl > .form-group > .buttons-container > .btn')
             .click();
 
@@ -64,5 +69,13 @@ it('Editor login', () => {
         cy.get('.header > button')
             .click();
     
+    }
+
+    // check panoramas order and category name
+    for( var p = 1; p <= 10; p++ ) {
+
+        cy.get(':nth-child('+ p +') > .i-edit-list-category > .i-edit-list-category-text')
+            .should('contain', 'test ('+ (11 - p) +')');
+
     }
 })
