@@ -14,6 +14,8 @@ it('Upload panoramas', () => {
 
     cy.get('.btn').click();
 
+    cy.wait(5000);
+
     // create a new building
     cy.get('#buildingsCreateBuildingButton')
         .click();
