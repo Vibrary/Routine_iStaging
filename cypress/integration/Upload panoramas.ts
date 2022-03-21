@@ -92,5 +92,18 @@ it('Upload panoramas', () => {
 
     cy.get('[style="background-color: transparent; position: fixed;"] > .i-modal-inner > .modal-content > .modal-content-buttons > .btn')
         .click();
+
+    // test copy function
+    cy.get('.btn-group > :nth-child(4)')
+        .click();
+    
+    cy.get('[style="background-color: rgba(0, 0, 0, 0.7); position: fixed;"] > .i-modal-inner > .i-form-2 > .flex-wrap > :nth-child(1) > .form-group > :nth-child(2) > .form-control')
+        .type('eric@staging.com.tw');
+
+    cy.get('[style="background-color: rgba(0, 0, 0, 0.7); position: fixed;"] > .i-modal-inner > .i-form-2 > .flex-wrap > .row-mbl > .form-group > .buttons-container > .btn')
+        .click();
+
+    cy.get('.i-alert-text')
+        .should('contain', '複製成功');
     
 })
