@@ -1,4 +1,5 @@
 import 'cypress-file-upload';
+import "cypress-real-events/support";
 
 // ***********************************************
 // This example commands.js shows you how to
