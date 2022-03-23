@@ -35,7 +35,7 @@ describe('test `Upload panoramas` function', () => {
 
 
         // upload panoramas
-        for( var i = 0; i < 3; i++ ) {
+        for( var i = 1; i <= 3; i++ ) {
 
             cy.get('.add-panoramas > :nth-child(1)').click();
 
@@ -52,9 +52,9 @@ describe('test `Upload panoramas` function', () => {
                             'test (10).jpg',]);
 
             // wait for attaching finished
-            cy.wait(5000);
+            cy.wait(5000 * i);
 
-            if( i == 2 ) {
+            if( i == 3 ) {
                 cy.get('#use-filename')
                     .click();
             }
