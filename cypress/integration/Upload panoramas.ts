@@ -35,7 +35,7 @@ describe('test `Upload panoramas` function', () => {
 
 
         // upload panoramas
-        for( var i = 1; i <= 3; i++ ) {
+        for( var i = 0; i < 3; i++ ) {
 
             cy.get('.add-panoramas > :nth-child(1)').click();
 
@@ -52,9 +52,9 @@ describe('test `Upload panoramas` function', () => {
                             'test (10).jpg',]);
 
             // wait for attaching finished
-            cy.wait(5000 * i);
+            cy.wait(5000);
 
-            if( i == 3 ) {
+            if( i == 2 ) {
                 cy.get('#use-filename')
                     .click();
             }
@@ -63,14 +63,17 @@ describe('test `Upload panoramas` function', () => {
                 .click();
 
             // wait for uploading finished
-            cy.wait(20000);
+            cy.wait(30000);
 
             // check if uploading successfully finished
-            cy.get('.footer > p', {timeout : ( 10000 * i )})
+            cy.get('.footer > p')
                 .should('contain', '上傳結束');
 
             cy.get('.header > button')
                 .click();
+
+            // wait for resizing finished
+            cy.wait(10000);
         
         }
 
