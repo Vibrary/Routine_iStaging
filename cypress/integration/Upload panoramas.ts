@@ -1,5 +1,7 @@
 // npx cypress run --record --key b3d9641c-f47b-4156-8b78-3da59c48be73
 
+import {LoginEditorPage} from '../pages/Login_Editor_pages'
+
 Cypress.on('uncaught:exception', (err, ruunable) => {
     return false;
 })
@@ -31,18 +33,16 @@ const testImages = [
     ]
 ]
 
+const loginPage = new LoginEditorPage();
+
 describe('test `Upload panoramas` function', () => {
     it('Upload panoramas', () => {
 
-        cy.visit('https://vreditor.istaging.com/');
-
         // login to editor
-        cy.get(':nth-child(1) > :nth-child(2) > .form-control').type('eric@staging.com.tw');
-        cy.get(':nth-child(2) > :nth-child(2) > .form-control').type('000000');
-
-        cy.get('.btn').click();
-
-        cy.wait(5000);
+        loginPage.navigate('https://vreditor.istaging.com/');
+        loginPage.enterUsername('eric_cypress');
+        loginPage.enterPassword('000000');
+        loginPage.clickLogin();
 
         // create a new building
         cy.get('#buildingsCreateBuildingButton')
