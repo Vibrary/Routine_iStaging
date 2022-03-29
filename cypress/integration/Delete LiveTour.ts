@@ -1,20 +1,19 @@
+import {LoginEditorPage} from '../pages/Login_Editor_pages'
 
 Cypress.on('uncaught:exception', (err, ruunable) => {
     return false;
 })
 
+const loginPage = new LoginEditorPage();
+
 describe('test `delete LiveTour` function', () => {
     it('delete the latest LiveTour', () => {
 
-        cy.visit('https://vreditor.istaging.com/');
-
         // login to editor
-        cy.get(':nth-child(1) > :nth-child(2) > .form-control').type('eric@staging.com.tw');
-        cy.get(':nth-child(2) > :nth-child(2) > .form-control').type('000000');
-
-        cy.get('.btn').click();
-
-        cy.wait(5000);
+        loginPage.navigate('https://vreditor.istaging.com/');
+        loginPage.enterUsername('eric_cypress');
+        loginPage.enterPassword('000000');
+        loginPage.clickLogin();
 
         // choose the latest LiveTour
         cy.get('.i-dropdown-2 > .btn')
