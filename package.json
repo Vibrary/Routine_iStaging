@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --record --key b3d9641c-f47b-4156-8b78-3da59c48be73"
+    "test": "npx cypress run --record --key b3d9641c-f47b-4156-8b78-3da59c48be73",
+    "test_chrome": "npx cypress run --browser chrome --record --key b3d9641c-f47b-4156-8b78-3da59c48be73",
+    "test_edge": "npx cypress run --browser edge --record --key b3d9641c-f47b-4156-8b78-3da59c48be73",
+    "test_firefox": "npx cypress run --browser firefox --record --key b3d9641c-f47b-4156-8b78-3da59c48be73"
   },
   "keywords": [],
   "author": "",

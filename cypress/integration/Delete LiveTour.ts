@@ -33,6 +33,7 @@ describe('test `delete LiveTour` function', () => {
         cy.contains('刪除')
             .should('not.be.visible')
 
+        // realHover can only use in chromium browser
         cy.get('#buildingsList_0')
             .realHover();
 

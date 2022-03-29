@@ -49,7 +49,7 @@ describe('test `Upload panoramas` function', () => {
             .click();
 
         cy.get('.i-input')
-            .type('2022-03-28');
+            .type('2022-03-29');
 
         cy.get('.i-switch-track')
             .click();
@@ -85,7 +85,7 @@ describe('test `Upload panoramas` function', () => {
             }
 
             // wait for attaching finished
-            cy.wait(5000);
+            cy.wait(10000);
 
             if( i == 2 ) {
                 cy.get('#use-filename')
@@ -96,7 +96,7 @@ describe('test `Upload panoramas` function', () => {
                 .click();
 
             // wait for uploading finished
-            cy.wait(30000);
+            cy.wait(40000);
 
             // check if uploading successfully finished
             cy.get('.footer > p')
