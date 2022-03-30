@@ -1,39 +1,14 @@
 // npx cypress run --record --key b3d9641c-f47b-4156-8b78-3da59c48be73
 
 import {LoginEditorPage} from '../pages/Login_Editor_pages'
+import {TestImagePage} from '../pages/Test_Images_pages'
 
 Cypress.on('uncaught:exception', (err, ruunable) => {
     return false;
 })
 
-const testImages = [
-    [
-        'test (1).jpg',
-        'test (2).jpg',
-        'test (3).jpg',
-        'test (4).jpg',
-        'test (5).jpg',
-        'test (6).jpg',
-        'test (7).jpg',
-        'test (8).jpg',
-        'test (9).jpg',
-        'test (10).jpg'
-    ],
-    [
-        'test (11).jpg',
-        'test (12).jpg',
-        'test (13).jpg',
-        'test (14).jpg',
-        'test (15).jpg',
-        'test (16).jpg',
-        'test (17).jpg',
-        'test (18).jpg',
-        'test (19).jpg',
-        'test (20).jpg'
-    ]
-]
-
 const loginPage = new LoginEditorPage();
+const testImages = new TestImagePage();
 
 describe('test `Upload panoramas` function', () => {
     it('Upload panoramas', () => {
@@ -49,7 +24,7 @@ describe('test `Upload panoramas` function', () => {
             .click();
 
         cy.get('.i-input')
-            .type('2022-03-29');
+            .type('2022-03-30');
 
         cy.get('.i-switch-track')
             .click();
@@ -70,22 +45,22 @@ describe('test `Upload panoramas` function', () => {
 
                 case 0:
                     cy.get('#Panoramas')
-                        .attachFile(testImages[0]);
+                        .attachFile(testImages.selectImages(0));
                     break;
 
                 case 1:
                     cy.get('#Panoramas')
-                        .attachFile(testImages[1]);
+                        .attachFile(testImages.selectImages(1));
                     break;
 
                 default:
                     cy.get('#Panoramas')
-                        .attachFile(testImages[0]);
+                        .attachFile(testImages.selectImages(0));
 
             }
 
             // wait for attaching finished
-            cy.wait(10000);
+            cy.wait(5000);
 
             if( i == 2 ) {
                 cy.get('#use-filename')
@@ -96,7 +71,7 @@ describe('test `Upload panoramas` function', () => {
                 .click();
 
             // wait for uploading finished
-            cy.wait(40000);
+            cy.wait(50000);
 
             // check if uploading successfully finished
             cy.get('.footer > p')
@@ -106,7 +81,7 @@ describe('test `Upload panoramas` function', () => {
                 .click();
 
             // wait for resizing finished
-            cy.wait(10000);
+            cy.wait(5000);
         
         }
 
