@@ -1,5 +1,12 @@
 {
     "watchForFileChanges" : true,
     "defaultCommandTimeout" : 5000,
-    "projectId": "wo8896"
+    "projectId" : "wo8896",
+    "reporterOptions" : {
+        "charts" : true,
+        "overwrite" : false,
+        "html" : false,
+        "json" : true,
+        "reportDir" : "cypress/reports"
+    }
 }
