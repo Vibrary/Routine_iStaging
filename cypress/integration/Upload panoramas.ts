@@ -24,7 +24,7 @@ describe('test `Upload panoramas` function', () => {
             .click();
 
         cy.get('.i-input')
-            .type('2022-03-31');
+            .type('2022-04-06');
 
         cy.get('.i-switch-track')
             .click();

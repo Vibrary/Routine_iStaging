@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-03-31T02:23:41.516Z",
+    "end": "2022-03-31T02:23:55.955Z",
+    "duration": 14439,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "21cdbe7d-2f0f-4f2a-8bc0-e085e2c93a5b",
+      "title": "",
+      "fullFile": "cypress/integration/Delete LiveTour.ts",
+      "file": "cypress/integration/Delete LiveTour.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bb6e9b64-e806-4bcd-aaf4-c7ff654470d0",
+          "title": "test `delete LiveTour` function",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "delete the latest LiveTour",
+              "fullTitle": "test `delete LiveTour` function delete the latest LiveTour",
+              "timedOut": null,
+              "duration": 12781,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// login to editor\nloginPage.navigate('https://vreditor.istaging.com/');\nloginPage.enterUsername('eric_cypress');\nloginPage.enterPassword('000000');\nloginPage.clickLogin();\n// choose the latest LiveTour\ncy.get('.i-dropdown-2 > .btn')\n    .click();\ncy.get('.dropdown-menu > :nth-child(5)')\n    .click();\n// Be careful with this option {force : true}. It's possible to force your tests to pass when the element is actually not interactable in your application.\n/*\n    cy.get('#buildingsList_0')\n        .contains('刪除')\n        .click({force : true});\n*/\n// test delete LiveTour function\ncy.contains('刪除')\n    .should('not.be.visible');\n// realHover can only use in chromium browser\ncy.get('#buildingsList_0')\n    .realHover();\ncy.contains('刪除')\n    .should('be.visible')\n    .click();\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-buttons > .btn-primary')\n    .click();\ncy.get('.i-alert-text')\n    .should('contain', '刪除成功');",
+              "err": {},
+              "uuid": "8a1a6f4d-03bb-46a3-81e4-ed7b42061283",
+              "parentUUID": "bb6e9b64-e806-4bcd-aaf4-c7ff654470d0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8a1a6f4d-03bb-46a3-81e4-ed7b42061283"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12781,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
