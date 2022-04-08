@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run --reporter mochawesome",
+    "pretest": "rimraf -r ./cypress/reports/*.json",
+    "test": "npm run cypress_run_mochawesome || npm run posttest",
+    "cypress_run_mochawesome": "cypress run --reporter mochawesome",
+    "posttest": "npm run merge_reports && npm run generate_htmlreport",
     "test_electron_dashboard": "cypress run --record --key b3d9641c-f47b-4156-8b78-3da59c48be73",
     "test_chrome_dashboard": "cypress run --browser chrome --record --key b3d9641c-f47b-4156-8b78-3da59c48be73",
     "test_edge_dashboard": "cypress run --browser edge --record --key b3d9641c-f47b-4156-8b78-3da59c48be73",
     "test_firefox_dashboard": "cypress run --browser firefox --record --key b3d9641c-f47b-4156-8b78-3da59c48be73",
-    "merge_reports": "mochawesome-merge ./cypress/reports/*.json > ./2022-04-01.json",
-    "generate_htmlreport": "marge 2022-04-01.json --reportDir cypress/reports"
+    "merge_reports": "mochawesome-merge ./cypress/reports/*.json > ./2022-04-08.json",
+    "generate_htmlreport": "marge 2022-04-08.json --reportDir cypress/reports"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +24,7 @@
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.2.1",
     "mochawesome-report-generator": "^6.2.0",
+    "rimraf": "^3.0.2",
     "typescript": "^4.6.2"
   },
   "devDependencies": {
