@@ -23,8 +23,8 @@ describe('test `Upload panoramas` function', () => {
 
         // create a new building
         createBuilding.clickTriggerCreateLiveTour();
-        createBuilding.enterLiveTourName('2022-04-11');
-        createBuilding.clickEnablePublic(false);
+        createBuilding.enterLiveTourName('2022-04-13');
+        createBuilding.clickEnablePublic(true);
         createBuilding.clickCreateLiveTour();
 
         // enter `Panoramas` page
