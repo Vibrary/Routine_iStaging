@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-04-13T01:52:43.303Z",
-    "end": "2022-04-13T01:56:24.789Z",
-    "duration": 221486,
+    "start": "2022-04-15T01:13:22.479Z",
+    "end": "2022-04-15T01:17:01.574Z",
+    "duration": 219095,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "8eda3410-6bc0-447f-807b-1235a93de73b",
+      "uuid": "dd548826-64a5-413c-a407-708e2beebf52",
       "title": "",
       "fullFile": "cypress/integration/Upload panoramas.ts",
       "file": "cypress/integration/Upload panoramas.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "4d25a5ea-07e9-4530-a771-4c04ceb93bb6",
+          "uuid": "ed16a439-1572-4f1c-bc36-0b0528caf859",
           "title": "test `Upload panoramas` function",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "Upload panoramas",
               "fullTitle": "test `Upload panoramas` function Upload panoramas",
               "timedOut": null,
-              "duration": 218854,
+              "duration": 216494,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "// login to editor\nloginPage.navigate('https://vreditor.istaging.com/');\nloginPage.enterUsername('eric_cypress');\nloginPage.enterPassword('000000');\nloginPage.clickLogin();\n// create a new building\ncreateBuilding.clickTriggerCreateLiveTour();\ncreateBuilding.enterLiveTourName('2022-04-13');\ncreateBuilding.clickEnablePublic(true);\ncreateBuilding.clickCreateLiveTour();\n// enter `Panoramas` page\ncy.get('.nav > :nth-child(2) > .nav-link').click();\n// upload panoramas\nfor (var i = 0; i < 3; i++) {\n    cy.get('.add-panoramas > :nth-child(1)').click();\n    switch (i) {\n        case 0:\n            cy.get('#Panoramas')\n                .attachFile(testImages.selectImages(0));\n            break;\n        case 1:\n            cy.get('#Panoramas')\n                .attachFile(testImages.selectImages(1));\n            break;\n        default:\n            cy.get('#Panoramas')\n                .attachFile(testImages.selectImages(0));\n    }\n    // wait for attaching finished\n    cy.wait(5000);\n    if (i == 2) {\n        cy.get('#use-filename')\n            .click();\n    }\n    cy.get('[style=\"background-color: rgba(0, 0, 0, 0.7); position: fixed;\"] > .i-modal-inner > .i-form-2 > .flex-center > .row-mbl > .form-group > .buttons-container > .btn')\n        .click();\n    // wait for uploading finished\n    cy.wait(50000);\n    // check if uploading successfully finished\n    cy.get('.footer > p')\n        .should('contain', '上傳結束');\n    cy.get('.header > button')\n        .click();\n    // wait for resizing finished\n    cy.wait(5000);\n}\n// check panoramas order and category name\nfor (var p = 1; p <= 10; p++) {\n    cy.get(':nth-child(' + p + ') > .i-edit-list-category > .i-edit-list-category-text')\n        .should('contain', 'test (' + (11 - p) + ')');\n}\n// check upload limit and hint UI\ncy.get('.add-panoramas > :nth-child(1)').click();\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-title')\n    .should('contain', '全景圖數量已達上限');\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-text')\n    .should('contain', '全景圖數量已滿');\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-buttons > .btn')\n    .click();",
+              "code": "// login to editor\nloginPage.navigate('https://vreditor.istaging.com/');\nloginPage.enterUsername('eric_cypress');\nloginPage.enterPassword('000000');\nloginPage.clickLogin();\n// create a new building\ncreateBuilding.clickTriggerCreateLiveTour();\ncreateBuilding.enterLiveTourName('2022-04-15');\ncreateBuilding.clickEnablePublic(true);\ncreateBuilding.clickCreateLiveTour();\n// enter `Panoramas` page\ncy.get('.nav > :nth-child(2) > .nav-link').click();\n// upload panoramas\nfor (var i = 0; i < 3; i++) {\n    cy.get('.add-panoramas > :nth-child(1)').click();\n    switch (i) {\n        case 0:\n            cy.get('#Panoramas')\n                .attachFile(testImages.selectImages(0));\n            break;\n        case 1:\n            cy.get('#Panoramas')\n                .attachFile(testImages.selectImages(1));\n            break;\n        default:\n            cy.get('#Panoramas')\n                .attachFile(testImages.selectImages(0));\n    }\n    // wait for attaching finished\n    cy.wait(5000);\n    if (i == 2) {\n        cy.get('#use-filename')\n            .click();\n    }\n    cy.get('[style=\"background-color: rgba(0, 0, 0, 0.7); position: fixed;\"] > .i-modal-inner > .i-form-2 > .flex-center > .row-mbl > .form-group > .buttons-container > .btn')\n        .click();\n    // wait for uploading finished\n    cy.wait(50000);\n    // check if uploading successfully finished\n    cy.get('.footer > p')\n        .should('contain', '上傳結束');\n    cy.get('.header > button')\n        .click();\n    // wait for resizing finished\n    cy.wait(5000);\n}\n// check panoramas order and category name\nfor (var p = 1; p <= 10; p++) {\n    cy.get(':nth-child(' + p + ') > .i-edit-list-category > .i-edit-list-category-text')\n        .should('contain', 'test (' + (11 - p) + ')');\n}\n// check upload limit and hint UI\ncy.get('.add-panoramas > :nth-child(1)').click();\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-title')\n    .should('contain', '全景圖數量已達上限');\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-text')\n    .should('contain', '全景圖數量已滿');\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-buttons > .btn')\n    .click();",
               "err": {},
-              "uuid": "a9609dcb-05fe-4b05-ac1f-f4a3086f6ab9",
-              "parentUUID": "4d25a5ea-07e9-4530-a771-4c04ceb93bb6",
+              "uuid": "5e5cbddc-4670-44ef-a8c5-8c5bd87556a1",
+              "parentUUID": "ed16a439-1572-4f1c-bc36-0b0528caf859",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a9609dcb-05fe-4b05-ac1f-f4a3086f6ab9"
+            "5e5cbddc-4670-44ef-a8c5-8c5bd87556a1"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 218854,
+          "duration": 216494,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
