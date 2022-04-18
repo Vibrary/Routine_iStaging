@@ -6,9 +6,9 @@ export class TestImagePage {
 
 }
 
-
 const testImages = [
     [
+        // smaller images
         'test (1).jpg',
         'test (2).jpg',
         'test (3).jpg',
@@ -21,6 +21,7 @@ const testImages = [
         'test (10).jpg'
     ],
     [
+        // bigger images
         'test (11).jpg',
         'test (12).jpg',
         'test (13).jpg',
