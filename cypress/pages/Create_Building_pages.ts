@@ -11,7 +11,7 @@ export class CreateBuildingPage {
             .click();
     }
 
-    enterLiveTourName(name : string) {
+    enterLiveTourName(name : any) {
         cy.get(this.createBuildingPage_liveTourName)
             .type(name);
     }
