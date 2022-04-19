@@ -12,8 +12,8 @@
     "test_chrome_dashboard": "cypress run --browser chrome --record --key b3d9641c-f47b-4156-8b78-3da59c48be73",
     "test_edge_dashboard": "cypress run --browser edge --record --key b3d9641c-f47b-4156-8b78-3da59c48be73",
     "test_firefox_dashboard": "cypress run --browser firefox --record --key b3d9641c-f47b-4156-8b78-3da59c48be73",
-    "merge_reports": "mochawesome-merge ./cypress/reports/*.json > ./2022-04-18.json",
-    "generate_htmlreport": "marge 2022-04-18.json --reportDir cypress/reports"
+    "merge_reports": "mochawesome-merge ./cypress/reports/*.json > ./2022-04-19.json",
+    "generate_htmlreport": "marge 2022-04-19.json --reportDir cypress/reports"
   },
   "keywords": [],
   "author": "",

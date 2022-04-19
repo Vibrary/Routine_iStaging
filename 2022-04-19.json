@@ -5,9 +5,9 @@
     "passes": 4,
     "pending": 0,
     "failures": 0,
-    "start": "2022-04-18T09:41:32.172Z",
-    "end": "2022-04-18T09:46:43.056Z",
-    "duration": 283481,
+    "start": "2022-04-19T01:11:49.981Z",
+    "end": "2022-04-19T01:16:52.273Z",
+    "duration": 273462,
     "testsRegistered": 4,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "93d2e6cb-af35-4480-9e7e-28587f8f36f1",
+      "uuid": "831a06bb-8c71-45f6-a093-98067675914b",
       "title": "",
       "fullFile": "cypress/integration/Copy LiveTour.ts",
       "file": "cypress/integration/Copy LiveTour.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "79d5b8a7-2876-4041-8823-5d127a90f529",
+          "uuid": "894646fe-0d7d-4bc1-a7ed-3171fb4f5c87",
           "title": "test `copy LiveTour` function",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "copy the latest Livetour",
               "fullTitle": "test `copy LiveTour` function copy the latest Livetour",
               "timedOut": null,
-              "duration": 21895,
+              "duration": 20161,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "// login to editor\nloginPage.navigate('https://vreditor.istaging.com/');\nloginPage.enterUsername('eric_cypress');\nloginPage.enterPassword('000000');\nloginPage.clickLogin();\n// choose the latest LiveTour\ncy.get('.i-dropdown-2 > .btn')\n    .click();\ncy.get('.dropdown-menu > :nth-child(5)')\n    .click();\ncy.get('#buildingsList_0 > .i-list-router')\n    .click();\ncy.wait(5000);\n// test copy function\ncy.get('.btn-group > :nth-child(4)')\n    .click();\ncy.get('[style=\"background-color: rgba(0, 0, 0, 0.7); position: fixed;\"] > .i-modal-inner > .i-form-2 > .flex-wrap > :nth-child(1) > .form-group > :nth-child(2) > .form-control')\n    .type('eric@staging.com.tw');\ncy.get('[style=\"background-color: rgba(0, 0, 0, 0.7); position: fixed;\"] > .i-modal-inner > .i-form-2 > .flex-wrap > .row-mbl > .form-group > .buttons-container > .btn')\n    .click();\ncy.get('.i-alert-text')\n    .should('contain', '複製成功');",
               "err": {},
-              "uuid": "15fa4c21-cb3d-4c71-bc90-be1b67e9a784",
-              "parentUUID": "79d5b8a7-2876-4041-8823-5d127a90f529",
+              "uuid": "8dc35823-7f68-4de2-9d28-5ef790880dc8",
+              "parentUUID": "894646fe-0d7d-4bc1-a7ed-3171fb4f5c87",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "15fa4c21-cb3d-4c71-bc90-be1b67e9a784"
+            "8dc35823-7f68-4de2-9d28-5ef790880dc8"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 21895,
+          "duration": 20161,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -76,7 +76,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "7cec9cef-c8cd-4eab-a093-46847e2b6484",
+      "uuid": "5d6c8cd6-48b7-4575-94ab-f3578c42dcc1",
       "title": "",
       "fullFile": "cypress/integration/Delete LiveTour.ts",
       "file": "cypress/integration/Delete LiveTour.ts",
@@ -85,7 +85,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "782432b9-e27f-4918-ae57-303bbceaaf23",
+          "uuid": "530283f3-ec94-4562-b204-3c6f6301a1fb",
           "title": "test `delete LiveTour` function",
           "fullFile": "",
           "file": "",
@@ -96,7 +96,7 @@
               "title": "delete the latest LiveTour",
               "fullTitle": "test `delete LiveTour` function delete the latest LiveTour",
               "timedOut": null,
-              "duration": 14297,
+              "duration": 13847,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -105,20 +105,20 @@
               "context": null,
               "code": "// login to editor\nloginPage.navigate('https://vreditor.istaging.com/');\nloginPage.enterUsername('eric_cypress');\nloginPage.enterPassword('000000');\nloginPage.clickLogin();\n// choose the latest LiveTour\ncy.get('.i-dropdown-2 > .btn')\n    .click();\ncy.get('.dropdown-menu > :nth-child(5)')\n    .click();\n// Be careful with this option {force : true}. It's possible to force your tests to pass when the element is actually not interactable in your application.\n/*\n    cy.get('#buildingsList_0')\n        .contains('刪除')\n        .click({force : true});\n*/\n// test delete LiveTour function\ncy.contains('刪除')\n    .should('not.be.visible');\n// realHover can only use in chromium browser\ncy.get('#buildingsList_0')\n    .realHover();\ncy.contains('刪除')\n    .should('be.visible')\n    .click();\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-buttons > .btn-primary')\n    .click();\ncy.get('.i-alert-text')\n    .should('contain', '刪除成功');",
               "err": {},
-              "uuid": "8cebfbed-3a4b-475a-b39e-f9905b12fb79",
-              "parentUUID": "782432b9-e27f-4918-ae57-303bbceaaf23",
+              "uuid": "9fd4db2a-9bfa-48cf-aff9-b5eb4d1f394d",
+              "parentUUID": "530283f3-ec94-4562-b204-3c6f6301a1fb",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "8cebfbed-3a4b-475a-b39e-f9905b12fb79"
+            "9fd4db2a-9bfa-48cf-aff9-b5eb4d1f394d"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 14297,
+          "duration": 13847,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -134,7 +134,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "66dc9ffe-dee8-413f-a897-7786e3bcb723",
+      "uuid": "a440ed64-7ebb-4099-a17a-fe02febd335a",
       "title": "",
       "fullFile": "cypress/integration/Upload panoramas.ts",
       "file": "cypress/integration/Upload panoramas.ts",
@@ -143,7 +143,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a6950a2f-9eae-4a83-9110-316e6f81d696",
+          "uuid": "43d0988d-ce7d-4834-b652-59b8ed5f58b1",
           "title": "test `Upload panoramas` function",
           "fullFile": "",
           "file": "",
@@ -154,29 +154,29 @@
               "title": "Upload panoramas",
               "fullTitle": "test `Upload panoramas` function Upload panoramas",
               "timedOut": null,
-              "duration": 225406,
+              "duration": 216406,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "// login to editor\nloginPage.navigate('https://vreditor.istaging.com/');\nloginPage.enterUsername('eric_cypress');\nloginPage.enterPassword('000000');\nloginPage.clickLogin();\n// create a new building\ncreateBuilding.clickTriggerCreateLiveTour();\ncreateBuilding.enterLiveTourName('2022-04-18');\ncreateBuilding.clickEnablePublic(true);\ncreateBuilding.clickCreateLiveTour();\n// enter `Panoramas` page\ncy.get('.nav > :nth-child(2) > .nav-link').click();\n// upload panoramas\nfor (var i = 0; i < 3; i++) {\n    cy.get('.add-panoramas > :nth-child(1)').click();\n    switch (i) {\n        case 0:\n            cy.get('#Panoramas')\n                .attachFile(testImages.selectImages(0));\n            break;\n        case 1:\n            cy.get('#Panoramas')\n                .attachFile(testImages.selectImages(1));\n            break;\n        default:\n            cy.get('#Panoramas')\n                .attachFile(testImages.selectImages(0));\n    }\n    // wait for attaching finished\n    cy.wait(5000);\n    if (i == 2) {\n        cy.get('#use-filename')\n            .click();\n    }\n    cy.get('[style=\"background-color: rgba(0, 0, 0, 0.7); position: fixed;\"] > .i-modal-inner > .i-form-2 > .flex-center > .row-mbl > .form-group > .buttons-container > .btn')\n        .click();\n    // wait for uploading finished\n    cy.wait(50000);\n    // check if uploading successfully finished\n    cy.get('.footer > p')\n        .should('contain', '上傳結束');\n    cy.get('.header > button')\n        .click();\n    // wait for resizing finished\n    cy.wait(5000);\n}\n// check panoramas order and category name\nfor (var p = 1; p <= 10; p++) {\n    cy.get(':nth-child(' + p + ') > .i-edit-list-category > .i-edit-list-category-text')\n        .should('contain', 'test (' + (11 - p) + ')');\n}\n// check upload limit and hint UI\ncy.get('.add-panoramas > :nth-child(1)').click();\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-title')\n    .should('contain', '全景圖數量已達上限');\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-text')\n    .should('contain', '全景圖數量已滿');\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-buttons > .btn')\n    .click();",
+              "code": "// login to editor\nloginPage.navigate('https://vreditor.istaging.com/');\nloginPage.enterUsername('eric_cypress');\nloginPage.enterPassword('000000');\nloginPage.clickLogin();\n// create a new building\ncreateBuilding.clickTriggerCreateLiveTour();\ncreateBuilding.enterLiveTourName('2022-04-19');\ncreateBuilding.clickEnablePublic(true);\ncreateBuilding.clickCreateLiveTour();\n// enter `Panoramas` page\ncy.get('.nav > :nth-child(2) > .nav-link').click();\n// upload panoramas\nfor (var i = 0; i < 3; i++) {\n    cy.get('.add-panoramas > :nth-child(1)').click();\n    switch (i) {\n        case 0:\n            cy.get('#Panoramas')\n                .attachFile(testImages.selectImages(0));\n            break;\n        case 1:\n            cy.get('#Panoramas')\n                .attachFile(testImages.selectImages(1));\n            break;\n        default:\n            cy.get('#Panoramas')\n                .attachFile(testImages.selectImages(0));\n    }\n    // wait for attaching finished\n    cy.wait(5000);\n    if (i == 2) {\n        cy.get('#use-filename')\n            .click();\n    }\n    cy.get('[style=\"background-color: rgba(0, 0, 0, 0.7); position: fixed;\"] > .i-modal-inner > .i-form-2 > .flex-center > .row-mbl > .form-group > .buttons-container > .btn')\n        .click();\n    // wait for uploading finished\n    cy.wait(50000);\n    // check if uploading successfully finished\n    cy.get('.footer > p')\n        .should('contain', '上傳結束');\n    cy.get('.header > button')\n        .click();\n    // wait for resizing finished\n    cy.wait(5000);\n}\n// check panoramas order and category name\nfor (var p = 1; p <= 10; p++) {\n    cy.get(':nth-child(' + p + ') > .i-edit-list-category > .i-edit-list-category-text')\n        .should('contain', 'test (' + (11 - p) + ')');\n}\n// check upload limit and hint UI\ncy.get('.add-panoramas > :nth-child(1)').click();\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-title')\n    .should('contain', '全景圖數量已達上限');\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-text')\n    .should('contain', '全景圖數量已滿');\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-buttons > .btn')\n    .click();",
               "err": {},
-              "uuid": "48c9fdd8-fce7-4f19-b06f-7db752ad99e4",
-              "parentUUID": "a6950a2f-9eae-4a83-9110-316e6f81d696",
+              "uuid": "2f69b785-c505-4f1d-8680-3ee498a6360c",
+              "parentUUID": "43d0988d-ce7d-4834-b652-59b8ed5f58b1",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "48c9fdd8-fce7-4f19-b06f-7db752ad99e4"
+            "2f69b785-c505-4f1d-8680-3ee498a6360c"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 225406,
+          "duration": 216406,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -192,7 +192,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "7bbd55de-d64c-4733-879a-6f96d1b6583f",
+      "uuid": "bac06fa5-64d2-430f-9809-70a6b95007a7",
       "title": "",
       "fullFile": "cypress/integration/Add 360 video.ts",
       "file": "cypress/integration/Add 360 video.ts",
@@ -201,7 +201,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "2020c3d5-566a-4de9-8013-8b71046e213b",
+          "uuid": "43437af1-6cb8-41f3-bfb5-b209e8a50ae5",
           "title": "test `Add 360 video` function",
           "fullFile": "",
           "file": "",
@@ -212,29 +212,29 @@
               "title": "Add 360 video",
               "fullTitle": "test `Add 360 video` function Add 360 video",
               "timedOut": null,
-              "duration": 21883,
+              "duration": 23048,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "// login to editor\nloginPage.navigate('https://vreditor.istaging.com/');\nloginPage.enterUsername('eric_cypress');\nloginPage.enterPassword('000000');\nloginPage.clickLogin();\n// create a new building\ncreateBuilding.clickTriggerCreateLiveTour();\ncreateBuilding.enterLiveTourName('2022-04-18');\ncreateBuilding.clickEnablePublic(false);\ncreateBuilding.clickCreateLiveTour();\n// enter `Panoramas` page\ncy.get('.nav > :nth-child(2) > .nav-link').click();\n// Add 360 video\ncy.get('.add-panoramas > :nth-child(2)')\n    .click();\ncy.get('.input-wrap > .form-control')\n    .type(testLinks.selectLink(360));\ncy.get('[style=\"background-color: rgba(0, 0, 0, 0.7); position: fixed;\"] > .i-modal-inner > .i-form-2 > .flex-wrap > .row-mbl > .form-group > .buttons-container > .btn')\n    .click()\n    .wait(3000);\ncy.get('.i-alert-text')\n    .should('contain', '新增成功');",
+              "code": "// login to editor\nloginPage.navigate('https://vreditor.istaging.com/');\nloginPage.enterUsername('eric_cypress');\nloginPage.enterPassword('000000');\nloginPage.clickLogin();\n// create a new building\ncreateBuilding.clickTriggerCreateLiveTour();\ncreateBuilding.enterLiveTourName('2022-04-19');\ncreateBuilding.clickEnablePublic(false);\ncreateBuilding.clickCreateLiveTour();\n// enter `Panoramas` page\ncy.get('.nav > :nth-child(2) > .nav-link').click();\n// Add 360 video\ncy.get('.add-panoramas > :nth-child(2)')\n    .click();\ncy.get('.input-wrap > .form-control')\n    .type(testLinks.selectLink(360));\ncy.get('[style=\"background-color: rgba(0, 0, 0, 0.7); position: fixed;\"] > .i-modal-inner > .i-form-2 > .flex-wrap > .row-mbl > .form-group > .buttons-container > .btn')\n    .click()\n    .wait(3000);\ncy.get('.i-alert-text')\n    .should('contain', '新增成功');",
               "err": {},
-              "uuid": "a556c138-2f2c-45be-9429-141b5b67dbea",
-              "parentUUID": "2020c3d5-566a-4de9-8013-8b71046e213b",
+              "uuid": "a1027931-7b28-4856-91a8-2256d3598822",
+              "parentUUID": "43437af1-6cb8-41f3-bfb5-b209e8a50ae5",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a556c138-2f2c-45be-9429-141b5b67dbea"
+            "a1027931-7b28-4856-91a8-2256d3598822"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 21883,
+          "duration": 23048,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

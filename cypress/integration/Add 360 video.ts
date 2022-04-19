@@ -21,7 +21,7 @@ describe('test `Add 360 video` function', () => {
 
         // create a new building
         createBuilding.clickTriggerCreateLiveTour();
-        createBuilding.enterLiveTourName('2022-04-18');
+        createBuilding.enterLiveTourName('2022-04-19');
         createBuilding.clickEnablePublic(false);
         createBuilding.clickCreateLiveTour();
 
