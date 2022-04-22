@@ -39,8 +39,7 @@ describe('test `Add 360 video` function', () => {
             .type(testLinks.selectLink(360));
 
         cy.get('[style="background-color: rgba(0, 0, 0, 0.7); position: fixed;"] > .i-modal-inner > .i-form-2 > .flex-wrap > .row-mbl > .form-group > .buttons-container > .btn')
-            .click()
-            .wait(3000);
+            .click();
 
         cy.get('.i-alert-text')
             .should('contain', '新增成功');
