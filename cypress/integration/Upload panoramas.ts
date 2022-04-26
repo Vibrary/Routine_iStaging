@@ -4,6 +4,7 @@ import {LoginEditorPage} from '../pages/Login_Editor_pages'
 import {TestImagePage} from '../pages/Test_Images_pages'
 import {CreateBuildingPage} from '../pages/Create_Building_pages'
 import {DatePage} from '../pages/Date_pages'
+import {StringPage} from '../pages/String_pages'
 
 Cypress.on('uncaught:exception', (err, ruunable) => {
     return false;
@@ -13,6 +14,7 @@ const loginPage = new LoginEditorPage();
 const testImages = new TestImagePage();
 const createBuilding = new CreateBuildingPage();
 const selectDate = new DatePage();
+const selectString = new StringPage();
 
 describe('test `Upload panoramas` function', () => {
     it('Upload panoramas', () => {
@@ -25,7 +27,7 @@ describe('test `Upload panoramas` function', () => {
 
         // create a new building
         createBuilding.clickTriggerCreateLiveTour();
-        createBuilding.enterLiveTourName(selectDate.selectDate('today'));
+        createBuilding.enterLiveTourName(selectDate.selectDate('today') + '_' + selectString.selectString('panoramas30'));
         createBuilding.clickEnablePublic(true);
         createBuilding.clickCreateLiveTour();
 

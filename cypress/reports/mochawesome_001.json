@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-04-22T01:09:15.522Z",
-    "end": "2022-04-22T01:09:36.446Z",
-    "duration": 20924,
+    "start": "2022-04-26T08:38:13.403Z",
+    "end": "2022-04-26T08:38:36.393Z",
+    "duration": 22990,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "4d958e36-1394-48ed-88cf-c27de344e36a",
+      "uuid": "097d562d-ed1c-4b9b-a333-8a38f96e031a",
       "title": "",
       "fullFile": "cypress/integration/Copy LiveTour.ts",
       "file": "cypress/integration/Copy LiveTour.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "cbfb3ced-d813-439a-b626-e2e8b406afd8",
+          "uuid": "f026a1b4-496f-4705-a218-e1fbe829edd9",
           "title": "test `copy LiveTour` function",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "copy the latest Livetour",
               "fullTitle": "test `copy LiveTour` function copy the latest Livetour",
               "timedOut": null,
-              "duration": 19448,
+              "duration": 21473,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "// login to editor\nloginPage.navigate('https://vreditor.istaging.com/');\nloginPage.enterUsername('eric_cypress');\nloginPage.enterPassword('000000');\nloginPage.clickLogin();\n// choose the latest LiveTour\ncy.get('.i-dropdown-2 > .btn')\n    .click();\ncy.get('.dropdown-menu > :nth-child(5)')\n    .click();\ncy.get('#buildingsList_0 > .i-list-router')\n    .click();\ncy.wait(5000);\n// test copy function\ncy.get('.btn-group > :nth-child(4)')\n    .click();\ncy.get('[style=\"background-color: rgba(0, 0, 0, 0.7); position: fixed;\"] > .i-modal-inner > .i-form-2 > .flex-wrap > :nth-child(1) > .form-group > :nth-child(2) > .form-control')\n    .type('eric@staging.com.tw');\ncy.get('[style=\"background-color: rgba(0, 0, 0, 0.7); position: fixed;\"] > .i-modal-inner > .i-form-2 > .flex-wrap > .row-mbl > .form-group > .buttons-container > .btn')\n    .click();\ncy.get('.i-alert-text')\n    .should('contain', '複製成功');",
               "err": {},
-              "uuid": "136c8d62-6883-4dd0-9984-3a6c8bd060a4",
-              "parentUUID": "cbfb3ced-d813-439a-b626-e2e8b406afd8",
+              "uuid": "4310188b-999c-47ef-8bab-ceaa6da67d80",
+              "parentUUID": "f026a1b4-496f-4705-a218-e1fbe829edd9",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "136c8d62-6883-4dd0-9984-3a6c8bd060a4"
+            "4310188b-999c-47ef-8bab-ceaa6da67d80"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 19448,
+          "duration": 21473,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

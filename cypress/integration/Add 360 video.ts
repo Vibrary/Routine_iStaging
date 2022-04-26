@@ -2,6 +2,7 @@ import {LoginEditorPage} from '../pages/Login_Editor_pages'
 import {TestLinkPage} from '../pages/Test_Links_pages'
 import {CreateBuildingPage} from '../pages/Create_Building_pages'
 import {DatePage} from '../pages/Date_pages'
+import {StringPage} from '../pages/String_pages'
 
 Cypress.on('uncaught:exception', (err, ruunable) => {
     return false;
@@ -11,6 +12,7 @@ const loginPage = new LoginEditorPage();
 const testLinks = new TestLinkPage();
 const createBuilding = new CreateBuildingPage();
 const selectDate = new DatePage();
+const selectString = new StringPage();
 
 describe('test `Add 360 video` function', () => {
     it('Add 360 video', () => {
@@ -23,7 +25,7 @@ describe('test `Add 360 video` function', () => {
 
         // create a new building
         createBuilding.clickTriggerCreateLiveTour();
-        createBuilding.enterLiveTourName(selectDate.selectDate('today'));
+        createBuilding.enterLiveTourName(selectDate.selectDate('today') + '_' + selectString.selectString('video360'));
         createBuilding.clickEnablePublic(false);
         createBuilding.clickCreateLiveTour();
 
