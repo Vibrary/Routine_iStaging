@@ -15,4 +15,4 @@ export class StringPage {
 
 const panoramas30 = 'Upload 30 panoramas';
 const video360 = 'Add 360 video';
-const others = 'created by mocha';
+const others = 'created by Cypress';

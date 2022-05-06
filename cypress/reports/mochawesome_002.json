@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-04-28T02:00:29.644Z",
-    "end": "2022-04-28T02:00:47.891Z",
-    "duration": 18247,
+    "start": "2022-05-06T01:04:34.045Z",
+    "end": "2022-05-06T01:04:50.619Z",
+    "duration": 16574,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "90edb4a1-c1f4-4cc6-aa0f-eb0212653d6b",
+      "uuid": "47868027-ce10-41da-b031-0a061c2343b0",
       "title": "",
       "fullFile": "cypress/integration/Delete LiveTour.ts",
       "file": "cypress/integration/Delete LiveTour.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "5c024952-bc95-464d-a4d6-ffa7d3bc7b5f",
+          "uuid": "491819d4-1cb2-4c97-a233-5de6abd0f019",
           "title": "test `delete LiveTour` function",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "delete the latest LiveTour",
               "fullTitle": "test `delete LiveTour` function delete the latest LiveTour",
               "timedOut": null,
-              "duration": 16260,
+              "duration": 14439,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "// login to editor\nloginPage.navigate('https://vreditor.istaging.com/');\nloginPage.enterUsername('eric_cypress');\nloginPage.enterPassword('000000');\nloginPage.clickLogin();\n// choose the latest LiveTour\ncy.get('.i-dropdown-2 > .btn')\n    .click();\ncy.get('.dropdown-menu > :nth-child(5)')\n    .click();\n// Be careful with this option {force : true}. It's possible to force your tests to pass when the element is actually not interactable in your application.\n/*\n    cy.get('#buildingsList_0')\n        .contains('刪除')\n        .click({force : true});\n*/\n// test delete LiveTour function\ncy.contains('刪除')\n    .should('not.be.visible');\n// realHover can only use in chromium browser\ncy.get('#buildingsList_0')\n    .realHover();\ncy.contains('刪除')\n    .should('be.visible')\n    .click();\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-buttons > .btn-primary')\n    .click();\ncy.get('.i-alert-text')\n    .should('contain', '刪除成功');",
+              "code": "// login to editor\nloginPage.navigate('https://vreditor.istaging.com/');\nloginPage.enterUsername('eric_cypress');\nloginPage.enterPassword('000000');\nloginPage.clickLogin();\n// choose the latest LiveTour\ncy.get('.i-dropdown-2 > .btn')\n    .click();\ncy.get('.dropdown-menu > :nth-child(5)')\n    .click();\n// Be careful with this option {force : true}. It's possible to force your tests to pass when the element is actually not interactable in your application.\n// Because `realHover` is not support in Firefox, so we can use {force : true} to excute delete function for now.\ncy.get('#buildingsList_0')\n    .contains('刪除')\n    .click({ force: true });\n/*    // test delete LiveTour function\n    cy.contains('刪除')\n        .should('not.be.visible')\n    \n    // realHover can only use in chromium browser\n    cy.get('#buildingsList_0')\n        .realHover();\n    \n    cy.contains('刪除')\n        .should('be.visible')\n        .click();*/\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-buttons > .btn-primary')\n    .click();\ncy.get('.i-alert-text')\n    .should('contain', '刪除成功');",
               "err": {},
-              "uuid": "83b88d44-c860-4bea-87c5-894e25997ba9",
-              "parentUUID": "5c024952-bc95-464d-a4d6-ffa7d3bc7b5f",
+              "uuid": "193b72fe-5dfe-4953-b893-5a051bd0b184",
+              "parentUUID": "491819d4-1cb2-4c97-a233-5de6abd0f019",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "83b88d44-c860-4bea-87c5-894e25997ba9"
+            "193b72fe-5dfe-4953-b893-5a051bd0b184"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 16260,
+          "duration": 14439,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
