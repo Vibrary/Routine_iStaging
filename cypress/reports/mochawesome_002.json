@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-05-06T01:04:34.045Z",
-    "end": "2022-05-06T01:04:50.619Z",
-    "duration": 16574,
+    "start": "2022-05-12T01:03:03.299Z",
+    "end": "2022-05-12T01:03:20.392Z",
+    "duration": 17093,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "47868027-ce10-41da-b031-0a061c2343b0",
+      "uuid": "5da6ab86-3462-4b7d-b6d0-65b7d435ae96",
       "title": "",
       "fullFile": "cypress/integration/Delete LiveTour.ts",
       "file": "cypress/integration/Delete LiveTour.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "491819d4-1cb2-4c97-a233-5de6abd0f019",
+          "uuid": "44acb010-06fb-47e3-8ed9-b7e340bc3121",
           "title": "test `delete LiveTour` function",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "delete the latest LiveTour",
               "fullTitle": "test `delete LiveTour` function delete the latest LiveTour",
               "timedOut": null,
-              "duration": 14439,
+              "duration": 15193,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "// login to editor\nloginPage.navigate('https://vreditor.istaging.com/');\nloginPage.enterUsername('eric_cypress');\nloginPage.enterPassword('000000');\nloginPage.clickLogin();\n// choose the latest LiveTour\ncy.get('.i-dropdown-2 > .btn')\n    .click();\ncy.get('.dropdown-menu > :nth-child(5)')\n    .click();\n// Be careful with this option {force : true}. It's possible to force your tests to pass when the element is actually not interactable in your application.\n// Because `realHover` is not support in Firefox, so we can use {force : true} to excute delete function for now.\ncy.get('#buildingsList_0')\n    .contains('刪除')\n    .click({ force: true });\n/*    // test delete LiveTour function\n    cy.contains('刪除')\n        .should('not.be.visible')\n    \n    // realHover can only use in chromium browser\n    cy.get('#buildingsList_0')\n        .realHover();\n    \n    cy.contains('刪除')\n        .should('be.visible')\n        .click();*/\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-buttons > .btn-primary')\n    .click();\ncy.get('.i-alert-text')\n    .should('contain', '刪除成功');",
               "err": {},
-              "uuid": "193b72fe-5dfe-4953-b893-5a051bd0b184",
-              "parentUUID": "491819d4-1cb2-4c97-a233-5de6abd0f019",
+              "uuid": "df00a554-a4fa-408f-8824-2d08393e9b3a",
+              "parentUUID": "44acb010-06fb-47e3-8ed9-b7e340bc3121",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "193b72fe-5dfe-4953-b893-5a051bd0b184"
+            "df00a554-a4fa-408f-8824-2d08393e9b3a"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 14439,
+          "duration": 15193,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
