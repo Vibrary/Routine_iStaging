@@ -9,7 +9,7 @@ export class DatePage {
 
 }
 
-const today = '2022-05-12';
+const today = '2022-06-10';
 const thisYear = '2022';
 const thisMonth = '4';
 const thisDay = '19';

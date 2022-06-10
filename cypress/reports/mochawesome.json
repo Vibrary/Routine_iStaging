@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-05-12T01:01:52.314Z",
-    "end": "2022-05-12T01:02:21.199Z",
-    "duration": 28885,
+    "start": "2022-06-10T01:22:14.824Z",
+    "end": "2022-06-10T01:22:41.349Z",
+    "duration": 26525,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "ec42be48-8c6b-4ba6-917b-9bdfad0b9fe5",
+      "uuid": "1598d0d5-f4ad-4d29-9c7b-f9c1320105fb",
       "title": "",
       "fullFile": "cypress/integration/Add 360 video.ts",
       "file": "cypress/integration/Add 360 video.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "ee760d78-232f-40ca-9c7b-92de602942f2",
+          "uuid": "be81ea2c-43f6-4793-9830-3a4bf9d6cd43",
           "title": "test `Add 360 video` function",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Add 360 video",
               "fullTitle": "test `Add 360 video` function Add 360 video",
               "timedOut": null,
-              "duration": 26405,
+              "duration": 24217,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "// login to editor\nloginPage.navigate('https://vreditor.istaging.com/');\nloginPage.enterUsername('eric_cypress');\nloginPage.enterPassword('000000');\nloginPage.clickLogin();\n// create a new building\ncreateBuilding.clickTriggerCreateLiveTour();\ncreateBuilding.enterLiveTourName(selectDate.selectDate('today') + '_' + selectString.selectString('video360'));\ncreateBuilding.clickEnablePublic(false);\ncreateBuilding.clickCreateLiveTour();\n// enter `Panoramas` page\ncy.get('.nav > :nth-child(2) > .nav-link').click();\n// Add 360 video\ncy.get('.add-panoramas > :nth-child(2)')\n    .click();\n// input a youtube link\ncy.get('.input-wrap > .form-control')\n    .type(testLinks.selectLink(360));\ncy.get('[style=\"background-color: rgba(0, 0, 0, 0.7); position: fixed;\"] > .i-modal-inner > .i-form-2 > .flex-wrap > .row-mbl > .form-group > .buttons-container > .btn')\n    .click();\ncy.get('.i-alert-text')\n    .should('contain', '新增成功');",
               "err": {},
-              "uuid": "d6e73b1e-479f-4b3f-abdc-dc60669370f1",
-              "parentUUID": "ee760d78-232f-40ca-9c7b-92de602942f2",
+              "uuid": "3964d139-94bd-443c-a66a-da2c4597680d",
+              "parentUUID": "be81ea2c-43f6-4793-9830-3a4bf9d6cd43",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "d6e73b1e-479f-4b3f-abdc-dc60669370f1"
+            "3964d139-94bd-443c-a66a-da2c4597680d"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 26405,
+          "duration": 24217,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
