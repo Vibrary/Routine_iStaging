@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-07-19T09:20:33.056Z",
-    "end": "2022-07-19T09:21:08.884Z",
-    "duration": 35828,
+    "start": "2022-07-22T01:37:09.588Z",
+    "end": "2022-07-22T01:37:45.628Z",
+    "duration": 36040,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "d5c33aa7-e5c0-4d22-bb7f-1ca308e1a7ea",
+      "uuid": "0090f9eb-b036-4466-bd33-c56bda1f9ec6",
       "title": "",
       "fullFile": "cypress/integration/Reload editor.ts",
       "file": "cypress/integration/Reload editor.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d10644bb-45ce-48a3-bd80-fc57bf7693a6",
+          "uuid": "4712bac6-ff14-4434-9bf3-0318b6782df1",
           "title": "test if session token went wrong after reloading",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "reload VR Maker editor after login",
               "fullTitle": "test if session token went wrong after reloading reload VR Maker editor after login",
               "timedOut": null,
-              "duration": 34028,
+              "duration": 34387,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "// login to editor\nloginPage.navigate('https://vreditor.istaging.com/');\nloginPage.enterUsername('eric_cypress');\nloginPage.enterPassword('000000');\nloginPage.clickLogin();\ncy.wait(10000);\ncy.reload();\ncy.wait(10000);\ncy.get('.logo')\n    .should('be.visible');",
               "err": {},
-              "uuid": "08b43d74-0687-4a0c-bc55-d408908d6993",
-              "parentUUID": "d10644bb-45ce-48a3-bd80-fc57bf7693a6",
+              "uuid": "bb25d09f-6bd1-490e-ac85-c8a875ff3814",
+              "parentUUID": "4712bac6-ff14-4434-9bf3-0318b6782df1",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "08b43d74-0687-4a0c-bc55-d408908d6993"
+            "bb25d09f-6bd1-490e-ac85-c8a875ff3814"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 34028,
+          "duration": 34387,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

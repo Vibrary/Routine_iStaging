@@ -20,8 +20,8 @@ jobs:
           npm ci
           $(npm bin)/cypress verify
           
-      - name: Run Cypress tests
-        run: npm test
+      - name: Run Cypress tests ( Chrome )
+        run: npm run test_chrome_dashboard
         continue-on-error: false
         
       - name: Deploy
