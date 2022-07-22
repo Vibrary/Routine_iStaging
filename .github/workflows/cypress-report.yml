@@ -20,9 +20,9 @@ jobs:
           npm ci
           $(npm bin)/cypress verify
           
-      - name: Run Cypress tests
-        run: npm test
-        continue-on-error: false
+      - name: Run Cypress tests ( Chrome )
+        run: npm run test_chrome_dashboard
+        continue-on-error: true
         
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
