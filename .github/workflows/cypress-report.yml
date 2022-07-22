@@ -15,9 +15,9 @@ jobs:
       
       - name: Install cypress and verify
         run:
-          npm cache clean --force
           npm ci
           $(npm bin)/cypress verify
+          npm cache clean
           
       - name: Run Cypress tests ( Chrome )
         run: npm run test_chrome_dashboard
