@@ -6,7 +6,7 @@
   "scripts": {
     "pretest": "rimraf -r ./cypress/reports/*.json",
     "test": "npm run cypress_run_mochawesome || npm run posttest",
-    "cypress_run_mochawesome": "cypress run --reporter mochawesome",
+    "cypress_run_mochawesome": "cypress run --browser chrome --reporter mochawesome",
     "posttest": "npm run merge_reports && npm run generate_htmlreport",
     "test_electron_dashboard": "cypress run --record --key b3d9641c-f47b-4156-8b78-3da59c48be73",
     "test_chrome_dashboard": "cypress run --browser chrome --record --key b3d9641c-f47b-4156-8b78-3da59c48be73",
