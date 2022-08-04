@@ -5,6 +5,7 @@ import {TestImagePage} from '../pages/Test_Images_pages'
 import {CreateBuildingPage} from '../pages/Create_Building_pages'
 import {DatePage} from '../pages/Date_pages'
 import {StringPage} from '../pages/String_pages'
+import {LanguagePage} from '../pages/Language_pages'
 
 Cypress.on('uncaught:exception', (err, ruunable) => {
     return false;
@@ -15,12 +16,14 @@ const testImages = new TestImagePage();
 const createBuilding = new CreateBuildingPage();
 const selectDate = new DatePage();
 const selectString = new StringPage();
+const selectLanguage = new LanguagePage();
 
 describe('test `Upload panoramas` function', () => {
     it('Upload panoramas', () => {
 
         // login to editor
         loginPage.navigate('https://vreditor.istaging.com/');
+        selectLanguage.selectLanguage('EN');
         loginPage.enterUsername('eric_cypress');
         loginPage.enterPassword('000000');
         loginPage.clickLogin();
@@ -74,7 +77,7 @@ describe('test `Upload panoramas` function', () => {
 
             // check if uploading successfully finished
             cy.get('.footer > p')
-                .should('contain', '上傳結束');
+                .should('contain', 'Upload end');
 
             cy.get('.header > button')
                 .click();
@@ -96,10 +99,10 @@ describe('test `Upload panoramas` function', () => {
         cy.get('.add-panoramas > :nth-child(1)').click();
 
         cy.get('[style="background-color: transparent; position: fixed;"] > .i-modal-inner > .modal-content > .modal-content-title')
-            .should('contain', '全景圖數量已達上限');
+            .should('contain', 'Pano number limit reached');
 
         cy.get('[style="background-color: transparent; position: fixed;"] > .i-modal-inner > .modal-content > .modal-content-text')
-            .should('contain', '全景圖數量已滿');
+            .should('contain', "You've reached the maximum number of panoramas allowed in a LiveTour.");
 
         cy.get('[style="background-color: transparent; position: fixed;"] > .i-modal-inner > .modal-content > .modal-content-buttons > .btn')
             .click();

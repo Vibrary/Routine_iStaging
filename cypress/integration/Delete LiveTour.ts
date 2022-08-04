@@ -1,16 +1,19 @@
 import {LoginEditorPage} from '../pages/Login_Editor_pages'
+import {LanguagePage} from '../pages/Language_pages'
 
 Cypress.on('uncaught:exception', (err, ruunable) => {
     return false;
 })
 
 const loginPage = new LoginEditorPage();
+const selectLanguage = new LanguagePage();
 
 describe('test `delete LiveTour` function', () => {
     it('delete the latest LiveTour', () => {
 
         // login to editor
         loginPage.navigate('https://vreditor.istaging.com/');
+        selectLanguage.selectLanguage('EN');
         loginPage.enterUsername('eric_cypress');
         loginPage.enterPassword('000000');
         loginPage.clickLogin();
@@ -26,7 +29,7 @@ describe('test `delete LiveTour` function', () => {
         // Because `realHover` is not support in Firefox, so we can use {force : true} to excute delete function for now.
         
             cy.get('#buildingsList_0')
-                .contains('刪除')
+                .contains('Delete')
                 .click({force : true});
         
 
@@ -46,7 +49,7 @@ describe('test `delete LiveTour` function', () => {
             .click();
         
         cy.get('.i-alert-text')
-            .should('contain', '刪除成功');
+            .should('contain', 'Deleted successfully');
 
     })
 })

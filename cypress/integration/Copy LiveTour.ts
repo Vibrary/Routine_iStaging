@@ -1,16 +1,19 @@
 import {LoginEditorPage} from '../pages/Login_Editor_pages'
+import {LanguagePage} from '../pages/Language_pages'
 
 Cypress.on('uncaught:exception', (err, ruunable) => {
     return false;
 })
 
 const loginPage = new LoginEditorPage();
+const selectLanguage = new LanguagePage();
 
 describe('test `copy LiveTour` function', ()=> {
     it('copy the latest Livetour', () => {
 
         // login to editor
         loginPage.navigate('https://vreditor.istaging.com/');
+        selectLanguage.selectLanguage('EN');
         loginPage.enterUsername('eric_cypress');
         loginPage.enterPassword('000000');
         loginPage.clickLogin();
@@ -38,7 +41,7 @@ describe('test `copy LiveTour` function', ()=> {
             .click();
 
         cy.get('.i-alert-text')
-            .should('contain', '複製成功');
+            .should('contain', 'Duplicated successfully');
 
     })
 })

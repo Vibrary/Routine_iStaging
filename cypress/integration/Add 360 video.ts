@@ -3,6 +3,7 @@ import {TestLinkPage} from '../pages/Test_Links_pages'
 import {CreateBuildingPage} from '../pages/Create_Building_pages'
 import {DatePage} from '../pages/Date_pages'
 import {StringPage} from '../pages/String_pages'
+import {LanguagePage} from '../pages/Language_pages'
 
 Cypress.on('uncaught:exception', (err, ruunable) => {
     return false;
@@ -13,12 +14,14 @@ const testLinks = new TestLinkPage();
 const createBuilding = new CreateBuildingPage();
 const selectDate = new DatePage();
 const selectString = new StringPage();
+const selectLanguage = new LanguagePage();
 
 describe('test `Add 360 video` function', () => {
     it('Add 360 video', () => {
 
         // login to editor
         loginPage.navigate('https://vreditor.istaging.com/');
+        selectLanguage.selectLanguage('EN');
         loginPage.enterUsername('eric_cypress');
         loginPage.enterPassword('000000');
         loginPage.clickLogin();
@@ -44,7 +47,7 @@ describe('test `Add 360 video` function', () => {
             .click();
 
         cy.get('.i-alert-text')
-            .should('contain', '新增成功');
+            .should('contain', 'Added successfully');
 
     })
 
