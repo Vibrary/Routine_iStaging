@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-07-28T01:13:41.260Z",
-    "end": "2022-07-28T01:17:25.343Z",
-    "duration": 224083,
+    "start": "2022-08-04T06:39:05.034Z",
+    "end": "2022-08-04T06:42:51.595Z",
+    "duration": 226561,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "01402a32-e664-4351-b8d1-7f6a4edba229",
+      "uuid": "c8257dde-51b1-4500-8a8a-f873b136b3be",
       "title": "",
       "fullFile": "cypress/integration/Upload panoramas.ts",
       "file": "cypress/integration/Upload panoramas.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c925b364-959c-46d8-982d-87ac52245c76",
+          "uuid": "86716887-1f57-4198-b796-fbac66bcdc10",
           "title": "test `Upload panoramas` function",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Upload panoramas",
               "fullTitle": "test `Upload panoramas` function Upload panoramas",
               "timedOut": null,
-              "duration": 221236,
+              "duration": 223634,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "// login to editor\nloginPage.navigate('https://vreditor.istaging.com/');\nloginPage.enterUsername('eric_cypress');\nloginPage.enterPassword('000000');\nloginPage.clickLogin();\n// create a new building\ncreateBuilding.clickTriggerCreateLiveTour();\ncreateBuilding.enterLiveTourName(selectDate.selectDate('today') + '_' + selectString.selectString('panoramas30'));\ncreateBuilding.clickEnablePublic(true);\ncreateBuilding.clickCreateLiveTour();\n// enter `Panoramas` page\ncy.get('.nav > :nth-child(2) > .nav-link').click();\n// upload panoramas\nfor (var i = 0; i < 3; i++) {\n    cy.get('.add-panoramas > :nth-child(1)').click();\n    switch (i) {\n        case 0:\n            cy.get('#Panoramas')\n                .attachFile(testImages.selectImages(0));\n            break;\n        case 1:\n            cy.get('#Panoramas')\n                .attachFile(testImages.selectImages(1));\n            break;\n        default:\n            cy.get('#Panoramas')\n                .attachFile(testImages.selectImages(0));\n    }\n    // wait for attaching finished\n    cy.wait(5000);\n    if (i == 2) {\n        cy.get('#use-filename')\n            .click();\n    }\n    cy.get('[style=\"background-color: rgba(0, 0, 0, 0.7); position: fixed;\"] > .i-modal-inner > .i-form-2 > .flex-center > .row-mbl > .form-group > .buttons-container > .btn')\n        .click();\n    // wait for uploading finished\n    cy.wait(50000);\n    // check if uploading successfully finished\n    cy.get('.footer > p')\n        .should('contain', '上傳結束');\n    cy.get('.header > button')\n        .click();\n    // wait for resizing finished\n    cy.wait(5000);\n}\n// check panoramas order and category name\nfor (var p = 1; p <= 10; p++) {\n    cy.get(':nth-child(' + p + ') > .i-edit-list-category > .i-edit-list-category-text')\n        .should('contain', 'test (' + (11 - p) + ')');\n}\n// check upload limit and hint UI\ncy.get('.add-panoramas > :nth-child(1)').click();\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-title')\n    .should('contain', '全景圖數量已達上限');\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-text')\n    .should('contain', '全景圖數量已滿');\ncy.get('[style=\"background-color: transparent; position: fixed;\"] > .i-modal-inner > .modal-content > .modal-content-buttons > .btn')\n    .click();",
               "err": {},
-              "uuid": "b370e623-3769-4924-99c3-6ac97f173e76",
-              "parentUUID": "c925b364-959c-46d8-982d-87ac52245c76",
+              "uuid": "0fe72747-e745-4e56-8b2f-0f03ce398409",
+              "parentUUID": "86716887-1f57-4198-b796-fbac66bcdc10",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "b370e623-3769-4924-99c3-6ac97f173e76"
+            "0fe72747-e745-4e56-8b2f-0f03ce398409"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 221236,
+          "duration": 223634,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
