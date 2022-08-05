@@ -24,8 +24,8 @@ jobs:
         run: npm run test_chrome_dashboard
         continue-on-error: false
 
-      - name: Run Cypress tests ( Firefox )
-        run: npm run test_firefox_dashboard
+      - name: Run Cypress tests ( Edge )
+        run: npm run test_edge_dashboard
         continue-on-error: false
         
 
