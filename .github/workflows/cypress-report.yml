@@ -9,7 +9,7 @@ on:
 
 jobs:
   cypress-test:
-    name: Run on Chrome 100
+    name: Run on Chrome 100 / Edge 103
     runs-on: ubuntu-18.04
     container: cypress/browsers:node14.19.0-chrome100-ff99-edge
     steps:
