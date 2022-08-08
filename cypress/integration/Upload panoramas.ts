@@ -30,7 +30,7 @@ describe('test `Upload panoramas` function', () => {
 
         // create a new building
         createBuilding.clickTriggerCreateLiveTour();
-        createBuilding.enterLiveTourName(selectDate.selectDate('today') + '_' + selectString.selectString('panoramas30'));
+        createBuilding.enterLiveTourName(selectDate.selectDate('month') + '_' + selectString.selectString('panoramas30'));
         createBuilding.clickEnablePublic(true);
         createBuilding.clickCreateLiveTour();
 
