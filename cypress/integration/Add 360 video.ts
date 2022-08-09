@@ -28,7 +28,7 @@ describe('test `Add 360 video` function', () => {
 
         // create a new building
         createBuilding.clickTriggerCreateLiveTour();
-        createBuilding.enterLiveTourName(selectDate.selectDate('month') + '_' + selectString.selectString('video360'));
+        createBuilding.enterLiveTourName(selectDate.selectDate('today') + '_' + selectString.selectString('video360'));
         createBuilding.clickEnablePublic(false);
         createBuilding.clickCreateLiveTour();
 
