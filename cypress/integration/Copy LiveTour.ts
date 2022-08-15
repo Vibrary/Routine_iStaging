@@ -25,7 +25,7 @@ describe('test `copy LiveTour` function', ()=> {
         cy.get('.dropdown-menu > :nth-child(5)')
             .click();
 
-        cy.get('#buildingsList_0 > .i-list-router')
+        cy.get('#buildingsList_0 > .i-building > .i-building-router')
             .click();
 
         cy.wait(5000);
