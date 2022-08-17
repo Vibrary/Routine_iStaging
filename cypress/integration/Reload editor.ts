@@ -15,13 +15,26 @@ describe('test if session token went wrong after reloading', ()=> {
         loginPage.enterPassword('000000');
         loginPage.clickLogin();
 
-        cy.wait(10000);
+        cy.wait(5000);
 
         cy.reload();
 
-        cy.wait(10000);
+        cy.wait(5000);
 
         cy.get('.logo')
+            .should('be.visible');
+
+        cy.get('.dropdown-control > .dropdown-image')
+            .should('be.visible')
+            .click();
+
+        // logout and back to login page
+        cy.get('.dropdown-footer-container > .dropdown-item')
+            .click();
+
+        cy.wait(5000);
+
+        cy.get('.login-logo')
             .should('be.visible');
 
     })
