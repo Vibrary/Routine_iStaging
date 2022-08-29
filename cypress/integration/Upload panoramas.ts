@@ -87,13 +87,23 @@ describe('test `Upload panoramas` function', () => {
         
         }
 
-        // check panoramas order and category name
+        // check panoramas order and category name after uploading finished
         for( var p = 1; p <= 10; p++ ) {
 
             cy.get(':nth-child('+ p +') > .i-edit-list-category > .i-edit-list-category-text')
                 .should('contain', 'test ('+ (11 - p) +')');
 
         }
+
+        // sort panoramas
+        cy.get('.i-edit-list-container > :nth-child(1)')
+            .move({ deltaX: 0, deltaY: 50, force: true });
+
+        cy.wait(5000);
+
+        // check panoramas order and category name after sorting finished
+        cy.get(':nth-child(1) > .i-edit-list-category > .i-edit-list-category-text')
+            .should('contain', 'test (9)');
 
         // check upload limit and hint UI
         cy.get('.add-panoramas > :nth-child(1)').click();
