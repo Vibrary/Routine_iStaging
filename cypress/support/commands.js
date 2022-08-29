@@ -1,5 +1,6 @@
 import 'cypress-file-upload';
 import "cypress-real-events/support";
+import '@4tw/cypress-drag-drop';
 
 // ***********************************************
 // This example commands.js shows you how to
