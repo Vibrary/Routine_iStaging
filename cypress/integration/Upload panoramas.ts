@@ -99,7 +99,7 @@ describe('test `Upload panoramas` function', () => {
         cy.get('.i-edit-list-container > :nth-child(1)')
             .move({ deltaX: 0, deltaY: 50, force: true });
 
-        cy.wait(5000);
+        cy.wait(10000);
 
         // check panoramas order and category name after sorting finished
         cy.get(':nth-child(1) > .i-edit-list-category > .i-edit-list-category-text')
