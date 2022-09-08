@@ -11,7 +11,7 @@ export class DatePage {
 
 }
 
-const today = '2022-09-07';
+const today = '2022-09-08';
 const thisYear = '2022';
 const thisMonth = '08';
 const thisDay = '19';
